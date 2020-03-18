@@ -1,0 +1,10 @@
+C:\Users\Gmui\Documents\C#_Projects\AUT\bin\Debug\AUT.exe.config
+C:\Users\Gmui\Documents\C#_Projects\AUT\bin\Debug\AUT.exe
+C:\Users\Gmui\Documents\C#_Projects\AUT\bin\Debug\AUT.pdb
+C:\Users\Gmui\Documents\C#_Projects\AUT\obj\Debug\AUT.csprojAssemblyReference.cache
+C:\Users\Gmui\Documents\C#_Projects\AUT\obj\Debug\AUT.Form1.resources
+C:\Users\Gmui\Documents\C#_Projects\AUT\obj\Debug\AUT.Properties.Resources.resources
+C:\Users\Gmui\Documents\C#_Projects\AUT\obj\Debug\AUT.csproj.GenerateResource.cache
+C:\Users\Gmui\Documents\C#_Projects\AUT\obj\Debug\AUT.csproj.CoreCompileInputs.cache
+C:\Users\Gmui\Documents\C#_Projects\AUT\obj\Debug\AUT.exe
+C:\Users\Gmui\Documents\C#_Projects\AUT\obj\Debug\AUT.pdb
