@@ -17,6 +17,14 @@ namespace WcfService
         bool Authorization (string login, string password);
 
         [OperationContract]
+        bool AvailabilityLogin(string login);
+
+        [OperationContract]
+        void ServerStatus();
+
+
+
+        [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Добавьте здесь операции служб

@@ -84,6 +84,18 @@ namespace AUT.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthorization/Authorization", ReplyAction="http://tempuri.org/IAuthorization/AuthorizationResponse")]
         System.Threading.Tasks.Task<bool> AuthorizationAsync(string login, string password);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthorization/AvailabilityLogin", ReplyAction="http://tempuri.org/IAuthorization/AvailabilityLoginResponse")]
+        bool AvailabilityLogin(string login);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthorization/AvailabilityLogin", ReplyAction="http://tempuri.org/IAuthorization/AvailabilityLoginResponse")]
+        System.Threading.Tasks.Task<bool> AvailabilityLoginAsync(string login);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthorization/ServerStatus", ReplyAction="http://tempuri.org/IAuthorization/ServerStatusResponse")]
+        void ServerStatus();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthorization/ServerStatus", ReplyAction="http://tempuri.org/IAuthorization/ServerStatusResponse")]
+        System.Threading.Tasks.Task ServerStatusAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuthorization/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IAuthorization/GetDataUsingDataContractResponse")]
         AUT.ServiceReference1.CompositeType GetDataUsingDataContract(AUT.ServiceReference1.CompositeType composite);
         
@@ -124,6 +136,22 @@ namespace AUT.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> AuthorizationAsync(string login, string password) {
             return base.Channel.AuthorizationAsync(login, password);
+        }
+        
+        public bool AvailabilityLogin(string login) {
+            return base.Channel.AvailabilityLogin(login);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AvailabilityLoginAsync(string login) {
+            return base.Channel.AvailabilityLoginAsync(login);
+        }
+        
+        public void ServerStatus() {
+            base.Channel.ServerStatus();
+        }
+        
+        public System.Threading.Tasks.Task ServerStatusAsync() {
+            return base.Channel.ServerStatusAsync();
         }
         
         public AUT.ServiceReference1.CompositeType GetDataUsingDataContract(AUT.ServiceReference1.CompositeType composite) {

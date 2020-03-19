@@ -31,40 +31,55 @@
             this.tbLogin = new System.Windows.Forms.TextBox();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.btConnect = new System.Windows.Forms.Button();
+            this.StatusLogin = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbLogin
             // 
-            this.tbLogin.Location = new System.Drawing.Point(12, 12);
+            this.tbLogin.Location = new System.Drawing.Point(9, 10);
+            this.tbLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbLogin.Name = "tbLogin";
-            this.tbLogin.Size = new System.Drawing.Size(100, 22);
+            this.tbLogin.Size = new System.Drawing.Size(76, 20);
             this.tbLogin.TabIndex = 0;
+            this.tbLogin.TextChanged += new System.EventHandler(this.tbLogin_TextChanged);
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(12, 40);
+            this.tbPassword.Location = new System.Drawing.Point(9, 32);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(100, 22);
+            this.tbPassword.Size = new System.Drawing.Size(76, 20);
             this.tbPassword.TabIndex = 1;
             // 
             // btConnect
             // 
-            this.btConnect.Location = new System.Drawing.Point(12, 68);
+            this.btConnect.Location = new System.Drawing.Point(9, 55);
+            this.btConnect.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btConnect.Name = "btConnect";
-            this.btConnect.Size = new System.Drawing.Size(75, 23);
+            this.btConnect.Size = new System.Drawing.Size(56, 19);
             this.btConnect.TabIndex = 2;
             this.btConnect.Text = "button1";
             this.btConnect.UseVisualStyleBackColor = true;
             this.btConnect.Click += new System.EventHandler(this.btConnect_Click);
             // 
+            // StatusLogin
+            // 
+            this.StatusLogin.AutoSize = true;
+            this.StatusLogin.Location = new System.Drawing.Point(157, 13);
+            this.StatusLogin.Name = "StatusLogin";
+            this.StatusLogin.Size = new System.Drawing.Size(0, 13);
+            this.StatusLogin.TabIndex = 3;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 252);
+            this.ClientSize = new System.Drawing.Size(250, 205);
+            this.Controls.Add(this.StatusLogin);
             this.Controls.Add(this.btConnect);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbLogin);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -78,6 +93,7 @@
         private System.Windows.Forms.TextBox tbLogin;
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Button btConnect;
+        private System.Windows.Forms.Label StatusLogin;
     }
 }
 

@@ -22,29 +22,54 @@ namespace AUT
             InitializeComponent();
         }
 
-        public void Check()
+        private void Form1_Load(object sender, EventArgs e)
         {
+            client = new AuthorizationClient();
 
-            string path = @"C:\Users\Gmui\Documents\C#_Projects\AUT\Source\NamePassword.txt";
-            bool flag = false;
+            Thread ServerStatus = new Thread(CheckServerStatus);
+            ServerStatus.IsBackground = true;
+            ServerStatus.Start();
+        }
 
-            using (StreamReader sr = new StreamReader(path, System.Text.Encoding.Default))
+        private void CheckServerStatus()
+        {
+            while(true)
             {
-                string line;
-                while ((line = sr.ReadLine()) != null)
+                bool status = true;
+                
+                //Если сервер работает
+                while (status)
                 {
-                    string[] word = line.Split(' ');
-
-                    if (word[0] == tbLogin.Text && word[1] == tbPassword.Text)
+                    try
                     {
-                        MessageBox.Show("correct");
-                        flag = true;
-                        break;
+                        client.ServerStatus();
+                        Thread.Sleep(250);
+                    }
+                    catch
+                    {
+                        status = false;
+                        MessageBox.Show("Сервер недоступен. Нажмите ОК для переподключения...");
                     }
                 }
-                if (!flag)
-                    MessageBox.Show("uncorrect");
+
+                //Если сервер не работает
+                while (!status)
+                {
+                    try
+                    {
+                        client.ServerStatus();
+                        status = true;
+                        MessageBox.Show("Подключение восстановлено");
+
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Сервер недоступен. Попытка переподключения...");
+                        Thread.Sleep(250);
+                    }
+                }
             }
+            
         }
 
         private void btConnect_Click(object sender, EventArgs e)
@@ -64,23 +89,24 @@ namespace AUT
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            client = new AuthorizationClient();
-        }
+        
 
-        private void UpdateServerStatus()
+        private void tbLogin_TextChanged(object sender, EventArgs e)
         {
-            while (true)
+            var result = client.AvailabilityLogin(tbLogin.Text);
+            if(result)
             {
-                if (client.State == System.ServiceModel.CommunicationState.Faulted)
-                {
-                    MessageBox.Show("Test2");
-                }
-                Thread.Sleep(250);
+                StatusLogin.ForeColor = Color.Green;
+                StatusLogin.Text = "Ник доступен";
+                btConnect.Enabled = true;
             }
-            
-            
+            else
+            {
+                StatusLogin.ForeColor = Color.Red;
+                StatusLogin.Text = "Ник занят";
+                btConnect.Enabled = false;
+            }
+
         }
     }
 }

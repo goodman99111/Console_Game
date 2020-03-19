@@ -13,6 +13,18 @@
   <wsdl:message name="IAuthorization_Authorization_OutputMessage">
     <wsdl:part name="parameters" element="tns:AuthorizationResponse" />
   </wsdl:message>
+  <wsdl:message name="IAuthorization_AvailabilityLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:AvailabilityLogin" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_AvailabilityLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AvailabilityLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_ServerStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ServerStatus" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorization_ServerStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ServerStatusResponse" />
+  </wsdl:message>
   <wsdl:message name="IAuthorization_GetDataUsingDataContract_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
   </wsdl:message>
@@ -24,6 +36,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IAuthorization/Authorization" message="tns:IAuthorization_Authorization_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAuthorization/AuthorizationResponse" message="tns:IAuthorization_Authorization_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AvailabilityLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthorization/AvailabilityLogin" message="tns:IAuthorization_AvailabilityLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthorization/AvailabilityLoginResponse" message="tns:IAuthorization_AvailabilityLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ServerStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthorization/ServerStatus" message="tns:IAuthorization_ServerStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthorization/ServerStatusResponse" message="tns:IAuthorization_ServerStatus_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IAuthorization/GetDataUsingDataContract" message="tns:IAuthorization_GetDataUsingDataContract_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAuthorization/GetDataUsingDataContractResponse" message="tns:IAuthorization_GetDataUsingDataContract_OutputMessage" />
@@ -33,6 +53,24 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Authorization">
       <soap:operation soapAction="http://tempuri.org/IAuthorization/Authorization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AvailabilityLogin">
+      <soap:operation soapAction="http://tempuri.org/IAuthorization/AvailabilityLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServerStatus">
+      <soap:operation soapAction="http://tempuri.org/IAuthorization/ServerStatus" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

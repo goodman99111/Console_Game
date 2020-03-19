@@ -34,6 +34,30 @@ namespace WcfService
             }
         }
 
+        public bool AvailabilityLogin(string login)
+        {
+            string path = @"C:\Users\good\Desktop\Project\Game\Console_Game\WCFServise\WcfService\App_Data\key.txt";
+
+            using (StreamReader sr = new StreamReader(path, System.Text.Encoding.Default))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    string[] word = line.Split(' ');
+
+                    if (word[0] == login)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+
+        public void ServerStatus()
+        {
+            
+        }
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
             if (composite == null)
