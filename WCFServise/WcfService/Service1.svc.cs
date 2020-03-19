@@ -16,7 +16,6 @@ namespace WcfService
         public bool Authorization(string login, string password)
         {
             string path = @"C:\Users\good\Desktop\Project\Game\Console_Game\WCFServise\WcfService\App_Data\key.txt";
-            bool flag = false;
 
             using (StreamReader sr = new StreamReader(path, System.Text.Encoding.Default))
             {
@@ -31,7 +30,6 @@ namespace WcfService
                         return true;
                     }
                 }
-
                 return false;
             }
         }
