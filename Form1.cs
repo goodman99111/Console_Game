@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using AUT.ServiceReference1;
-using System.Threading;
 
 namespace AUT
 {
     public partial class Form1 : Form
     {
-        AuthorizationClient client = null;
+        //private ServerObject Server = ServerObject.getInstance();
+        
 
         public Form1()
         {
@@ -74,21 +74,22 @@ namespace AUT
 
         private void btConnect_Click(object sender, EventArgs e)
         {
-            try
+            var client = new AuthorizationClient();
+            var result = client.Authorization(tbLogin.Text, tbPassword.Text);
+            if (result)
+                MessageBox.Show("Удачно");
+            else
+                MessageBox.Show("Неудачно");
+            //Check();
+            /*
+            if (tbLogin.Text != null || tbPassword.Text != null)
             {
-                var result = client.Authorization(tbLogin.Text, tbPassword.Text);
-                if (result)
-                    MessageBox.Show("Удачно");
-                else
-                    MessageBox.Show("Неудачно");
+                Server.SendMessage($"Check {tbLogin.Text} {tbPassword.Text}");
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Не удаётся подключиться к серверу");
-            }
-
+            */
         }
 
+<<<<<<< HEAD
         
 
         private void tbLogin_TextChanged(object sender, EventArgs e)
@@ -107,6 +108,12 @@ namespace AUT
                 btConnect.Enabled = false;
             }
 
+=======
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //Server.Connect();
+            
+>>>>>>> parent of db1d6b9... Добавлена проверка на доступность сервера
         }
     }
 }
