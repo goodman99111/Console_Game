@@ -1,0 +1,6 @@
+C:\Users\good\Desktop\Project\Game\Console_Game\WCFServise\WcfService\bin\WcfService.dll.config
+C:\Users\good\Desktop\Project\Game\Console_Game\WCFServise\WcfService\bin\WcfService.dll
+C:\Users\good\Desktop\Project\Game\Console_Game\WCFServise\WcfService\bin\WcfService.pdb
+C:\Users\good\Desktop\Project\Game\Console_Game\WCFServise\WcfService\obj\Debug\WcfService.csprojAssemblyReference.cache
+C:\Users\good\Desktop\Project\Game\Console_Game\WCFServise\WcfService\obj\Debug\WcfService.dll
+C:\Users\good\Desktop\Project\Game\Console_Game\WCFServise\WcfService\obj\Debug\WcfService.pdb

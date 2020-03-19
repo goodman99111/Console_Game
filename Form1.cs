@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using AUT.ServiceReference1;
 
 namespace AUT
 {
     public partial class Form1 : Form
     {
-        private ServerObject Server = ServerObject.getInstance();
+        //private ServerObject Server = ServerObject.getInstance();
+        
 
         public Form1()
         {
@@ -47,16 +49,25 @@ namespace AUT
 
         private void btConnect_Click(object sender, EventArgs e)
         {
+            var client = new AuthorizationClient();
+            var result = client.Authorization(tbLogin.Text, tbPassword.Text);
+            if (result)
+                MessageBox.Show("Удачно");
+            else
+                MessageBox.Show("Неудачно");
             //Check();
+            /*
             if (tbLogin.Text != null || tbPassword.Text != null)
             {
                 Server.SendMessage($"Check {tbLogin.Text} {tbPassword.Text}");
             }
+            */
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Server.Connect();
+            //Server.Connect();
+            
         }
     }
 }
